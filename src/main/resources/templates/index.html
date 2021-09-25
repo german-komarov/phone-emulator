@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Emulator</title>
+    <script src='webjars/stomp-websocket/2.3.3-1/stomp.js'></script>
+    <script src='webjars/sockjs-client/1.1.2/sockjs.js'></script>
+    <script src='webjars/jquery/3.5.1/jquery.js'></script>
+    <script src='webjars/bootstrap/4.6.0/js/bootstrap.js'></script>
+    <link href='webjars/bootstrap/4.6.0/css/bootstrap.css' rel='stylesheet'>
+    <script src='js/index.js'></script>
+    <link href='css/index.css' rel='stylesheet'>
+
+</head>
+<body>
+
+<div class='container'>
+    <div class='row'>
+
+
+        <div class='col-sm-5'>
+            <form id='phone-number-form'>
+                <div class='form-group'>
+                    <label for='phoneNumber'>Your phone number</label>
+                    <input class='form-control' id='phoneNumber' name='to' placeholder='Enter your phone number'
+                           type='text'>
+                </div>
+                <button class='btn btn-primary' onclick='initializeContent()' type='button'>Initialize content</button>
+            </form>
+
+            <div id='messages'>
+
+            </div>
+        </div>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-5'>
+            <p id='resultText'></p>
+            <form action='/messages/send' id='message-form' method='post'>
+                <div class='form-group'>
+                    <label for='from'>From</label>
+                    <input class='form-control' id='from' name='from' placeholder='Enter from' type='text'>
+                </div>
+                <div class='form-group'>
+                    <label for='to'>To</label>
+                    <input class='form-control' id='to' name='to' placeholder='Enter to' type='text'>
+                </div>
+                <div class='form-group'>
+                    <label for='text'>Text</label>
+                    <textarea class='form-control' id='text' name='to' placeholder='Enter text' type='text'></textarea>
+                </div>
+                <button class='btn btn-primary' id='send' onclick='submitForm()' type='button'>Send</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+</body>
+</html>
